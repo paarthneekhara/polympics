@@ -1,6 +1,9 @@
 var 
 
 s_bird,
+s_kejri,
+s_modi,
+s_rahul,
 s_bg,
 s_fg,
 s_pipeNorth,
@@ -27,12 +30,16 @@ Sprite.prototype.draw = function(ctx, x, y) {
 
 function initSprites(img) {
 
-	s_bird = [
-		new Sprite(img, 156, 115, 17, 12),
-		new Sprite(img, 156, 128, 17, 12),
-		new Sprite(img, 156, 141, 17, 12)
+	s_rahul = [
+		new Sprite(img, 303, 0, 28, 26),
+		new Sprite(img, 303, 28, 28, 26),
+		new Sprite(img, 303, 56, 28, 26),
 	];
-	
+	s_modi = [
+		new Sprite(img, 338, 0, 28, 26),
+		new Sprite(img, 338, 28, 28, 26),
+		new Sprite(img, 338, 56, 28, 26),
+	];
 	s_bg = new Sprite(img,   0, 0, 138, 114);
 	s_bg.color = "#70C5CF";
 	s_fg = new Sprite(img, 138, 0, 112,  56);
@@ -51,7 +58,10 @@ function initSprites(img) {
 		Share: new Sprite(img, 159, 177, 40, 14),
 		Score: new Sprite(img,  79, 191, 40, 14),
 		Ok:    new Sprite(img, 119, 191, 40, 14),
-		Start: new Sprite(img, 159, 191, 40, 14)
+		Start: new Sprite(img, 159, 191, 40, 14),
+		modi: new Sprite(img, 119, 191, 40, 14),
+		rahul: new Sprite(img, 119, 191, 40, 14),
+		kejri: new Sprite(img, 119, 191, 40, 14),
 	}
 
 	s_score  = new Sprite(img, 138,  56, 113, 58);
@@ -80,3 +90,4 @@ function initSprites(img) {
 		}
 	}
 }
+
