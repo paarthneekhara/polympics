@@ -30,16 +30,27 @@ Sprite.prototype.draw = function(ctx, x, y) {
 
 function initSprites(img) {
 
-	s_rahul = [
+	s_modi = [
 		new Sprite(img, 303, 0, 28, 26),
 		new Sprite(img, 303, 28, 28, 26),
 		new Sprite(img, 303, 56, 28, 26),
 	];
-	s_modi = [
-		new Sprite(img, 338, 0, 28, 26),
-		new Sprite(img, 338, 28, 28, 26),
-		new Sprite(img, 338, 56, 28, 26),
+	s_rahul = [
+		new Sprite(img, 398, 0, 28, 26),
+		new Sprite(img, 398, 28, 28, 26),
+		new Sprite(img, 398, 56, 28, 26),
 	];
+	s_kejri = [
+		new Sprite(img, 346, 0, 30, 26),
+		new Sprite(img, 346, 28, 30, 26),
+		new Sprite(img, 346, 56, 30, 26),
+	];
+	s_all_players = [
+		new Sprite(img, 303, 0, 150, 26),
+		new Sprite(img, 303, 28, 150, 26),
+		new Sprite(img, 303, 56, 150, 26),
+	];
+
 	s_bg = new Sprite(img,   0, 0, 138, 114);
 	s_bg.color = "#70C5CF";
 	s_fg = new Sprite(img, 138, 0, 112,  56);
