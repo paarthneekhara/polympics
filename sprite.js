@@ -31,25 +31,45 @@ Sprite.prototype.draw = function(ctx, x, y) {
 function initSprites(img) {
 
 	s_modi = [
-		new Sprite(img, 303, 0, 28, 26),
-		new Sprite(img, 303, 28, 28, 26),
-		new Sprite(img, 303, 56, 28, 26),
+		new Sprite(img, 325, 0, 25, 25),
+		new Sprite(img, 325, 25, 25, 25),
+		new Sprite(img, 325, 50, 25, 25),
 	];
 	s_rahul = [
-		new Sprite(img, 398, 0, 28, 26),
-		new Sprite(img, 398, 28, 28, 26),
-		new Sprite(img, 398, 56, 28, 26),
+		new Sprite(img, 425, 0, 25, 25),
+		new Sprite(img, 425, 25, 25, 25),
+		new Sprite(img, 425, 50, 25, 25),
 	];
 	s_kejri = [
-		new Sprite(img, 346, 0, 30, 26),
-		new Sprite(img, 346, 28, 30, 26),
-		new Sprite(img, 346, 56, 30, 26),
+		new Sprite(img, 375, 0, 30, 25),
+		new Sprite(img, 375, 25, 30, 25),
+		new Sprite(img, 375, 50, 30, 25),
 	];
 	s_all_players = [
-		new Sprite(img, 303, 0, 150, 26),
-		new Sprite(img, 303, 28, 150, 26),
-		new Sprite(img, 303, 56, 150, 26),
+		new Sprite(img, 325, 0, 125, 25),
+		new Sprite(img, 325, 25, 125, 25),
+		new Sprite(img, 325, 50, 125, 25),
 	];
+
+	s_kejri_opp = [];
+	s_rahul_opp = [];
+	s_modi_opp = [];
+
+	for(var i = 0; i < 10; i++){
+		var bjp_leaders = [
+			new Sprite(img, (i*25), 225, 25, 25),
+			new Sprite(img, (i*25), 250, 25, 25),
+			new Sprite(img, 0, 200, 25, 25),
+		];
+		s_kejri_opp.push(bjp_leaders);
+		s_rahul_opp.push(bjp_leaders);
+	}
+	
+
+	
+	
+	
+	
 
 	s_bg = new Sprite(img,   0, 0, 138, 114);
 	s_bg.color = "#70C5CF";
