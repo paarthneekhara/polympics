@@ -61,8 +61,16 @@ function initSprites(img) {
 			new Sprite(img, (i*25), 250, 25, 25),
 			new Sprite(img, 0, 200, 25, 25),
 		];
+		if(i < 5){
+			var aap_leaders = [
+			new Sprite(img, (i*25), 275, 25, 25),
+			new Sprite(img, (i*25), 300, 25, 25),
+			new Sprite(img, 25, 200, 25, 25),
+		];
+		}
 		s_kejri_opp.push(bjp_leaders);
 		s_rahul_opp.push(bjp_leaders);
+		s_rahul_opp.push(aap_leaders);
 	}
 	
 
@@ -79,7 +87,6 @@ function initSprites(img) {
 	s_pipeSouth = new Sprite(img, 277, 0, 26, 200);
 	
 	s_text = {
-		FlappyBird: new Sprite(img, 59, 114, 96, 22),
 		GameOver:   new Sprite(img, 59, 136, 94, 19),
 		GetReady:   new Sprite(img, 59, 155, 87, 22)
 	}

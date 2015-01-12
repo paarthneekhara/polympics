@@ -13,7 +13,7 @@
 
 	<style>
 	canvas {
-		display: block;
+		display: block;		
 		position: absolute;
 		margin: auto;
 		top: 0;
@@ -80,7 +80,22 @@ player = {
 				//console.log("here");
 				this.y = height - s_fg.height - 10;
 				if(currentstate === states.Game){
+					
+					if(player_name == "modi"){
+						var snd = new Audio("res/modichai.mp3");
+						snd.play();
+					}
+					else if(player_name == "kejri"){
+						var snd = new Audio("res/coughing.mp3");
+						snd.play();
+					}
+					else{
+						var snd = new Audio("res/mummyrahulgandhi.mp3");
+						snd.play();
+					}
 					currentstate = states.Score;
+					
+
 				}
 				this.velocity = this._jump;
 			}
@@ -194,6 +209,19 @@ pipes = {
 				var r = player.radius*player.radius;
 				// determine intersection
 				if (r > d1 || r > d2 || player.y < 0) {
+					if(player_name == "modi"){
+						var snd = new Audio("res/modichai.mp3");
+						snd.play();
+
+					}
+					else if(player_name == "kejri"){
+						var snd = new Audio("res/coughing.mp3");
+						snd.play();
+					}
+					else{
+						var snd = new Audio("res/mummyrahulgandhi.mp3");
+						snd.play();
+					}
 					currentstate = states.Score;
 				}
 			}
@@ -219,26 +247,22 @@ pipes = {
 
 		for (var i = 0, len = this._pipes.length; i < len; i++) {
 			var p = this._pipes[i];
+			
 			s_pipeSouth.draw(ctx, p.x, p.y );
 			s_pipeNorth.draw(ctx, p.x, p.y+this.padding+p.height);
+			
 			if(player_name == "kejri"){
-				//var rand_n = Math.floor(Math.random() * 2);
 				s_kejri_opp[p.randInd][n].draw(ctx, p.x + 3,p.y + 350 + 170);
 				s_kejri_opp[p.randInd][2].draw(ctx, p.x + 3,p.y + 350 + 220);
 			}
 			else if(player_name == "rahul"){
-				//var randInd = Math.floor(Math.random() * s_rahul_opp.length);
 				s_rahul_opp[p.randInd][n].draw(ctx, p.x + 3,p.y + 350 + 170);
 				s_rahul_opp[p.randInd][2].draw(ctx, p.x + 3,p.y + 350 + 220);
 			}
 			else if(player_name == "modi"){
-				//var randInd = Math.floor(Math.random() * s_modi_opp.length);
+				
 			}
 			
-			
-			//ctx.save();
-			//ctx.translate(this.x, this.y);
-			//ctx.rotate(3);
 		}
 	}
 };
@@ -290,6 +314,8 @@ function onpress(evt){
 
 		case states.Game:
 			player.jump();
+			// var snd = new Audio("res/sample.mp3");
+			// snd.play();
 			break;
 		case states.Score:
 			var mx = evt.offsetX, my = evt.offsetY;
@@ -298,6 +324,7 @@ function onpress(evt){
 				mx = evt.touches[0].clientX;
 				my = evt.touches[0].clientY;
 			}
+
 			if(okbtn.x < mx && mx < okbtn.x + okbtn.width && 
 				okbtn.y < my && my < okbtn.y + okbtn.height
 				){
