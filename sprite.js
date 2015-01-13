@@ -61,29 +61,43 @@ function initSprites(img) {
 			new Sprite(img, (i*25), 250, 25, 25),
 			new Sprite(img, 0, 200, 25, 25),
 		];
+		s_kejri_opp.push(bjp_leaders);
+		s_rahul_opp.push(bjp_leaders);
 		if(i < 5){
 			var aap_leaders = [
 			new Sprite(img, (i*25), 275, 25, 25),
 			new Sprite(img, (i*25), 300, 25, 25),
 			new Sprite(img, 25, 200, 25, 25),
 		];
-		}
-		s_kejri_opp.push(bjp_leaders);
-		s_rahul_opp.push(bjp_leaders);
 		s_rahul_opp.push(aap_leaders);
+		s_modi_opp.push(aap_leaders);
+		}
+		else{
+			var cong_leaders = [
+			new Sprite(img, (i*25), 275, 25, 25),
+			new Sprite(img, (i*25), 300, 25, 25),
+			new Sprite(img, 50, 200, 25, 25),
+		];
+		s_kejri_opp.push(cong_leaders);
+		s_modi_opp.push(cong_leaders);
+		}
+	}
+	s_mudde = [];
+	for(var i = 0; i < 4; i++){
+		s_mudde.push(new Sprite(img, (i*50), 325, 35, 25));
 	}
 	
+	s_bjp_logo = new Sprite(img, 0, 200, 25, 25);
+	s_aap_logo = new Sprite(img, 25, 200, 25, 25);
+	s_con_logo = new Sprite(img, 50, 200, 25, 25);
+	
+	
 
-	
-	
-	
-	
-
-	s_bg = new Sprite(img,   0, 0, 138, 114);
+	s_bg = new Sprite(img, 325, 75, 225,  200);
 	s_bg.color = "#70C5CF";
-	s_fg = new Sprite(img, 138, 0, 112,  56);
+	s_fg = new Sprite(img, 0, 0, 250,  56);
 	
-	s_pipeNorth = new Sprite(img, 251, 0, 26, 200);
+	s_pipeNorth = new Sprite(img, 251, 0, 24, 200);
 	s_pipeSouth = new Sprite(img, 277, 0, 26, 200);
 	
 	s_text = {
@@ -97,9 +111,9 @@ function initSprites(img) {
 		Score: new Sprite(img,  79, 191, 40, 14),
 		Ok:    new Sprite(img, 119, 191, 40, 14),
 		Start: new Sprite(img, 159, 191, 40, 14),
-		modi: new Sprite(img, 119, 191, 40, 14),
-		rahul: new Sprite(img, 119, 191, 40, 14),
-		kejri: new Sprite(img, 119, 191, 40, 14),
+		modi: new Sprite(img, 0, 200, 25, 25),
+		rahul: new Sprite(img, 50, 200, 25, 25),
+		kejri: new Sprite(img, 25, 200, 25, 25),
 	}
 
 	s_score  = new Sprite(img, 138,  56, 113, 58);
