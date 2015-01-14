@@ -23,10 +23,17 @@ function Sprite(img, x, y, width, height) {
 	this.width = width*2;
 	this.height = height*2;
 };
+
 Sprite.prototype.draw = function(ctx, x, y) {
 	ctx.drawImage(this.img, this.x, this.y, this.width, this.height,
 		x, y, this.width, this.height);
 };
+
+Sprite.prototype.drawResize = function(ctx, x, y, resize_factor) {
+	ctx.drawImage(this.img, this.x, this.y, this.width, this.height,
+		x, y, this.width/resize_factor, this.height/resize_factor);
+};
+
 
 function initSprites(img) {
 
@@ -49,6 +56,27 @@ function initSprites(img) {
 		new Sprite(img, 325, 0, 125, 25),
 		new Sprite(img, 325, 25, 125, 25),
 		new Sprite(img, 325, 50, 125, 25),
+	];
+
+	s_modi_big = [
+		new Sprite(img, 800, 0, 50, 50),
+		new Sprite(img, 800, 50, 50, 50),
+		new Sprite(img, 800, 100, 50, 50),
+	];
+	s_rahul_big = [
+		new Sprite(img, 1000, 0, 50, 50),
+		new Sprite(img, 1000, 50, 50, 50),
+		new Sprite(img, 1000, 100, 50, 50),
+	];
+	s_kejri_big = [
+		new Sprite(img, 900, 0, 60, 50),
+		new Sprite(img, 900, 50, 60, 50),
+		new Sprite(img, 900, 100, 60, 50),
+	];
+	s_all_players_big = [
+		new Sprite(img, 800, 0, 250, 50),
+		new Sprite(img, 800, 50, 250, 50),
+		new Sprite(img, 800, 100, 250, 50),
 	];
 
 	s_kejri_opp = [];
@@ -83,19 +111,24 @@ function initSprites(img) {
 		}
 	}
 	s_mudde = [];
-	for(var i = 0; i < 4; i++){
+	for(var i = 0; i < 11; i++){
 		s_mudde.push(new Sprite(img, (i*50), 325, 35, 25));
 	}
 	
 	s_bjp_logo = new Sprite(img, 0, 200, 25, 25);
 	s_aap_logo = new Sprite(img, 25, 200, 25, 25);
 	s_con_logo = new Sprite(img, 50, 200, 25, 25);
-	
-	
 
-	s_bg = new Sprite(img, 325, 75, 225,  200);
+	s_bjp_logo_big = new Sprite(img, 600, 300, 50, 50);
+	s_aap_logo_big = new Sprite(img, 550, 300, 50, 50);
+	s_con_logo_big = new Sprite(img, 650, 300, 50, 50);
+	
+	
+	s_car = new Sprite(img, 300, 300, 50, 25);
+	s_bg = new Sprite(img, 325, 75, 200,  200);
+	s_bg_car = new Sprite(img, 575, 75, 225,  225);
 	s_bg.color = "#70C5CF";
-	s_fg = new Sprite(img, 0, 0, 250,  56);
+	s_fg = new Sprite(img, 0, 0, 250,  55);
 	
 	s_pipeNorth = new Sprite(img, 251, 0, 24, 200);
 	s_pipeSouth = new Sprite(img, 277, 0, 26, 200);
@@ -111,9 +144,9 @@ function initSprites(img) {
 		Score: new Sprite(img,  79, 191, 40, 14),
 		Ok:    new Sprite(img, 119, 191, 40, 14),
 		Start: new Sprite(img, 159, 191, 40, 14),
-		modi: new Sprite(img, 0, 200, 25, 25),
-		rahul: new Sprite(img, 50, 200, 25, 25),
-		kejri: new Sprite(img, 25, 200, 25, 25),
+		modi: new Sprite(img, 600, 300, 50, 50),
+		rahul: new Sprite(img, 650, 300, 50, 50),
+		kejri: new Sprite(img, 550, 300, 50, 50),
 	}
 
 	s_score  = new Sprite(img, 138,  56, 113, 58);
