@@ -30,6 +30,7 @@
 var
 
 isThisLoad = true,
+loaded = false,
 canvas,
 ctx,
 width,
@@ -146,7 +147,6 @@ player = {
 			s_kejri[n].draw(ctx, -s_kejri[n].width/2, -s_kejri[n].height/2);
 		}
 		
-		
 		ctx.restore();
 
 
@@ -175,7 +175,6 @@ pipes = {
 
 	
 	update: function() {
-		//console.log("pipes");
 		var enter = true;
 		var n = 10;
 		this.frame += frames % n === 0 ? 1 : 0;
@@ -194,8 +193,8 @@ pipes = {
 			var rand_no = Math.floor(Math.random() * s_kejri_opp.length);
 			var rand_no2 = Math.floor(Math.random() * s_modi_opp.length);
 			var rand_no3 = Math.floor(Math.random() * s_rahul_opp.length);
-			//var rand_no4 =  Math.floor(Math.random() * s_mudde.length);
-			var rand_no4 = 0;
+			var rand_no4 =  Math.floor(Math.random() * s_mudde.length);
+			
 				this._pipes.push({
 					x: 500,
 					y: _y,
@@ -280,11 +279,10 @@ pipes = {
 		for (var i = 0, len = this._pipes.length; i < len; i++) {
 			var p = this._pipes[i];
 			
-			
 			s_pipeSouth.draw(ctx, p.x, p.y );
 			s_pipeNorth.draw(ctx, p.x, p.y+this.padding+p.height);
-
-			//s_mudde[p.randmudda].draw(ctx, p.x -3, p.y + 360);
+			//s_car.draw(ctx, p.x, height-120);
+			//s_mudde[p.randmudda].draw(ctx, p.x -3, p.y + 359);
 			if(player_name == "kejri"){
 				//s_kejri_opp[p.randInd_kejri][n].draw(ctx, p.x + 3,p.y + this.padding+ 230 + 170);
 				//s_kejri_opp[p.randInd_kejri][2].draw(ctx, p.x + 3,p.y + this.padding+ 230 + 220);
@@ -389,7 +387,6 @@ function onpress(evt){
 			break;
 	}
 }
-
 function main(){
 	canvas = document.createElement("canvas");
 	//console.log()
@@ -417,94 +414,78 @@ function main(){
 	var img = new Image();
 	img.src = "res/allplayers.png";
 	img.onload = function(){
-		//initSprites(this);
-		// ctx.fillStyle = s_bg.color;
-		// okbtn = {
-		// 	x: (width - s_buttons.Ok.width)/2,
-		// 	y: height - 200,
-		// 	width: s_buttons.Ok.width,
-		// 	height: s_buttons.Ok.height,
-		// };
-		// modibtn = {
-		// 	x: (width - s_buttons.modi.width - 200)/2,
-		// 	y: height - 200,
-		// 	width: s_buttons.modi.width,
-		// 	height: s_buttons.modi.height,
-		// };
-		// kejribtn = {
-		// 	x: (width - s_buttons.kejri.width)/2,
-		// 	y: height - 200,
-		// 	width: s_buttons.kejri.width,
-		// 	height: s_buttons.kejri.height,
-		// };
-		// rahulbtn = {
-		// 	x: (width - s_buttons.rahul.width + 200)/2,
-		// 	y: height - 200,
-		// 	width: s_buttons.rahul.width,
-		// 	height: s_buttons.rahul.height,
-		// };
-		init_players(img);
-		load_sec_image();
+		if(!loaded){
+			init_players(img);
+			load_sec_image();
+	
+			
 
-		//run();
+		}
 	}
+	
 	
 }
 
 function load_sec_image(){
 	var img = new Image();
-	img.src = "res/leaders.png";
+	
 	img.onload = function(){
 
 		init_leaders(img);
 		load_third_image();
 	}
+	img.src = "res/leaders.png";
 }
 
 function load_third_image(){
 	var img = new Image();
-	img.src = "res/partylogos.png";
+	
 	img.onload = function(){
 		init_logos(img);
 		load_fourth_image();
 	}
+	img.src = "res/partylogos.png";
 }
 function load_fourth_image(){
 	var img = new Image();
-	img.src = "res/foreground.png";
+	
 	img.onload = function(){
 		init_foreground(img);
 		load_fifth_image();
 	}
+	img.src = "res/foreground.png";
 }
 function load_fifth_image(){
 	var img = new Image();
-	img.src = "res/ok.png";
+	
 	img.onload = function(){
 		init_buttons(img);
 		load_sixth_image();
 	}
+	img.src = "res/ok.png";
 }
 function load_sixth_image(){
 	var img = new Image();
-	img.src = "res/scoreboard.png";
+	
 	img.onload = function(){
 		init_score(img);
 		load_seventh_image();
 	}
+	img.src = "res/scoreboard.png";
 }
 function load_seventh_image(){
 	var img = new Image();
-	img.src = "res/poles.png";
+	
 	img.onload = function(){
 		init_pipes(img);
 		load_eighth_image();
 	}
+	img.src = "res/poles.png";
 }
 
 function load_eighth_image(){
 	var img = new Image();
-	img.src = "res/numbers.png";
+	
 	img.onload = function(){
 		okbtn = {
 			x: (width - s_buttons.Ok.width)/2,
@@ -535,11 +516,15 @@ function load_eighth_image(){
 		run();
 		
 	}
+	img.src = "res/numbers.png";
+
 
 }
 
 
 function run(){
+	//console.log("run");
+	//loaded = true;
 	var loop = function(){
 		update();
 		render();
@@ -585,25 +570,24 @@ function render(){
 
 	
 
-	
-	//s_bg.draw(ctx, s_bg.width, height - s_bg.height ); 
+	// s_bg.draw(ctx, (width - s_bg.width)/2, height - s_bg.height);
+	// s_bg.draw(ctx, s_bg.width, height - s_bg.height); 
 	pipes.draw(ctx);
 	player.draw(ctx);
+	//s_bg_car.draw(ctx, 0, height - s_bg.height );
 	
-	s_bg.draw(ctx, 0, height - s_bg.height );
-	s_bg.draw(ctx, s_bg.width, height - s_bg.height ); 
 
 	s_fg.draw(ctx, fgpos, height - s_fg.height );
-	//s_fg.draw(ctx, fgpos + s_fg.width, height - s_fg.height ); 
+	s_fg.draw(ctx, fgpos + s_fg.width, height - s_fg.height ); 
+
 	var width2 = width/2;
 	if(currentstate === states.Splash){
 		//s_splash.draw(ctx, width2 - s_splash.width/2, height - 300);
 		s_text.GetReady.draw(ctx, width2 - s_text.GetReady.width/2, height-380);
-		s_buttons.modi.draw(ctx, modibtn.x, modibtn.y);
-		s_buttons.rahul.draw(ctx, rahulbtn.x, rahulbtn.y);
-		s_buttons.kejri.draw(ctx, kejribtn.x, kejribtn.y);
+		s_buttons.modi.drawResize(ctx, modibtn.x, modibtn.y, 1.5);
+		s_buttons.rahul.drawResize(ctx, rahulbtn.x, rahulbtn.y, 1.5);
+		s_buttons.kejri.drawResize(ctx, kejribtn.x, kejribtn.y, 1.5);
 	}
-
 
 	if(currentstate === states.Score){
 		s_text.GameOver.draw(ctx, width2 - s_text.GameOver.width/2, height - 400);
