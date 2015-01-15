@@ -58,26 +58,7 @@ function initSprites(img) {
 		new Sprite(img, 325, 50, 125, 25),
 	];
 
-	s_modi_big = [
-		new Sprite(img, 800, 0, 50, 50),
-		new Sprite(img, 800, 50, 50, 50),
-		new Sprite(img, 800, 100, 50, 50),
-	];
-	s_rahul_big = [
-		new Sprite(img, 1000, 0, 50, 50),
-		new Sprite(img, 1000, 50, 50, 50),
-		new Sprite(img, 1000, 100, 50, 50),
-	];
-	s_kejri_big = [
-		new Sprite(img, 900, 0, 60, 50),
-		new Sprite(img, 900, 50, 60, 50),
-		new Sprite(img, 900, 100, 60, 50),
-	];
-	s_all_players_big = [
-		new Sprite(img, 800, 0, 250, 50),
-		new Sprite(img, 800, 50, 250, 50),
-		new Sprite(img, 800, 100, 250, 50),
-	];
+	
 
 	s_kejri_opp = [];
 	s_rahul_opp = [];
@@ -119,11 +100,6 @@ function initSprites(img) {
 	s_aap_logo = new Sprite(img, 25, 200, 25, 25);
 	s_con_logo = new Sprite(img, 50, 200, 25, 25);
 
-	s_bjp_logo_big = new Sprite(img, 600, 300, 50, 50);
-	s_aap_logo_big = new Sprite(img, 550, 300, 50, 50);
-	s_con_logo_big = new Sprite(img, 650, 300, 50, 50);
-	
-	
 	s_car = new Sprite(img, 300, 300, 50, 25);
 	s_bg = new Sprite(img, 325, 75, 200,  200);
 	s_bg_car = new Sprite(img, 575, 75, 225,  225);
@@ -138,19 +114,16 @@ function initSprites(img) {
 		GetReady:   new Sprite(img, 59, 155, 87, 22)
 	}
 	s_buttons = {
-		Rate:  new Sprite(img,  79, 177, 40, 14),
-		Menu:  new Sprite(img, 119, 177, 40, 14),
-		Share: new Sprite(img, 159, 177, 40, 14),
-		Score: new Sprite(img,  79, 191, 40, 14),
+		
 		Ok:    new Sprite(img, 119, 191, 40, 14),
-		Start: new Sprite(img, 159, 191, 40, 14),
-		modi: new Sprite(img, 600, 300, 50, 50),
-		rahul: new Sprite(img, 650, 300, 50, 50),
-		kejri: new Sprite(img, 550, 300, 50, 50),
+		
+		modi: new Sprite(img, 0, 200, 25, 25),
+		rahul: new Sprite(img, 50, 200, 25, 25),
+		kejri: new Sprite(img, 25, 200, 25, 25),
 	}
 
 	s_score  = new Sprite(img, 138,  56, 113, 58);
-	s_splash = new Sprite(img,   0, 114,  59, 49);
+	
 
 	s_numberS = new Sprite(img, 0, 177, 6,  7);
 	s_numberB = new Sprite(img, 0, 188, 7, 10);
