@@ -56,6 +56,10 @@ function initPlayers(img){
 		new Sprite(img, 0, 25, 125, 25),
 		new Sprite(img, 0, 50, 125, 25),
 	];
+	s_arrows = [
+		new Sprite(img, 0, 75, 25, 25),
+		
+	];
 }
 
 function initLogos(img){
@@ -112,7 +116,7 @@ function initForeground(img){
 }
 
 function initBackground(img){
-	s_bg = new Sprite(img, 0, 0, 200,  200);
+	s_bg = new Sprite(img, 0, 0, 200,  75);
 	s_bg.color = "#70C5CF";
 
 }
@@ -124,7 +128,7 @@ function initPipes(img){
 function initText(img){
 	s_text = {
 		GameOver:   new Sprite(img, 1, 1, 94, 19),
-		GetReady:   new Sprite(img, 1, 1, 87, 22)
+		GetReady:   new Sprite(img, 0, 25, 50, 50)
 	};
 }
 function initButtons(img){
@@ -136,6 +140,7 @@ function initButtons(img){
 	};
 	
 }
+
 function initScore(img){
 	s_score  = new Sprite(img, 0,  0, 113, 58);
 }
