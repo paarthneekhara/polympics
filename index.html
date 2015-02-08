@@ -24,14 +24,19 @@
 	</style>
 </head>
 <body>
- <script type="text/javascript"><!--
-        mopub_ad_unit = "a52cd6cfda4045989824c83baf4ed69b";
-        //mopub_ad_width = 320; // optional
-        //mopub_ad_height = 50; // optional
-        //-->
-        </script> 
-        <script src="http://ads.mopub.com/js/client/mopub.js"></script>
-
+<script src="cucconjsExt/CocoonJS.js"></script>
+  <script src="cucconjsExt/CocoonJS_Ad.js"></script>  
+  <script src="cucconjsExt/CocoonJS_App.js"></script>   
+<script type="text/javascript">
+	function banner()
+    {	alert("here");
+        CocoonJS.Ad.onBannerReady.addEventListener(function()
+        {
+            CocoonJS.Ad.setBannerLayout(CocoonJS.Ad.BannerLayout.BOTTOM_CENTER);
+            CocoonJS.Ad.showBanner();
+        });
+    }
+</script>
 <script>
 var
 numberOfImagesLoaded = 0,
@@ -595,6 +600,7 @@ function handleImageLoad(e) {
 }
 
 function run(){
+	banner();
 	kejri_cough = new Audio("res/coughing.ogg");
 	modi_chai = new Audio("res/modichai.ogg");
 	rahul_mummy = new Audio("res/mummyrahulgandhi.ogg");
